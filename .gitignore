@@ -5,7 +5,8 @@
 hugo_stats.json  # 若启用 Tailwind 的 purge
 
 # ── 主题子模块（如用 submodule 管理主题，请保留） ---------------
-# /themes/<theme-name>   ← 不要加这一行，让 submodule 正常跟踪
+# /themes/<theme-name>
+/themes/
 
 # ── 本地运行时文件 ------------------------------------------------
 .hugo/
