@@ -1,4 +1,4 @@
-# baseURL: https://docs.lowcost-k8s-guide.tsanfer.com/
+baseURL: https://docs.lowcost-k8s-guide.tsanfer.com/
 languageCode: zh-cn
 title: 低成本高可用本地 K8s 集群落地指南：从硬件规划到系统上线
 
