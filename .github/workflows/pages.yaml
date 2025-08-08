@@ -75,7 +75,7 @@ jobs:
             --gc \
             --minify \
             # --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --baseURL "https://docs.lowcost-k8s-guide.tsanfer.com/"
+            --baseURL "https://docs.lowcost-k8s-guide.tsanfer.com/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache Save
         id: cache-save
