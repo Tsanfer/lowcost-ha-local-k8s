@@ -12,8 +12,7 @@ weight: 4
 
 {{< cards >}}
   {{< card icon="" title="安装操作系统" link="./os-installation" >}}
-  {{< card icon="" title="安装配置虚拟化平台 PVE" link="./‍pve-virtualization-setup" >}}
   {{< card icon="" title="初始化环境配置" link="./initial-environment-config" >}}
-  {{< card icon="" title="（待补全）操作系统测试" link="./os-testing" >}}
-  {{< card icon="" title="（其他未完成部分）" link="./" >}}
+  {{< card icon="" title="安装配置虚拟化平台 Proxmox VE" link="./pve-virtualization-setup" >}}
+  {{< card icon="" title="虚拟化平台 Proxmox VE 测试" link="./pve-testing" >}}
 {{< /cards >}}

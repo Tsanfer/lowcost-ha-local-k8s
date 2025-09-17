@@ -15,7 +15,6 @@ weight: 2
   {{< card icon="" title="硬件设备" link="./hardware-equipment" >}}
   {{< card icon="" title="硬件搭建过程" link="./hardware-assembly-process" >}}
   {{< card icon="" title="主板 BIOS 设置" link="./motherboard-bios-settings" >}}
-  {{< card icon="" title="（待补全）硬件架构" link="./hardware-architecture" >}}
   {{< card icon="" title="服务器性能及稳定性测试" link="./server-performance-and-stability-testing" >}}
 {{< /cards >}}
 

@@ -14,7 +14,7 @@ weight: 2
 
 参考 docker-compose:
 
-```yaml
+```yaml {linenos=table,hl_lines=[14,15,16],filename="./docker-compose.yml"}
 services:
   halo:
     image: registry.fit2cloud.com/halo/halo:2.20
@@ -28,9 +28,9 @@ services:
     command:
       # 修改为自己已有的 MySQL 配置
       # - --spring.r2dbc.url=r2dbc:pool:postgresql://postgresql.halo-project.svc.cluster.local:3306/halo
-      - --spring.r2dbc.url=r2dbc:pool:postgresql://xxxxx.com/halo
-      - --spring.r2dbc.username=xxx
-      - --spring.r2dbc.password=xxxx
+      - --spring.r2dbc.url=r2dbc:pool:postgresql://xxxx.com/halo
+      - --spring.r2dbc.username=halo.xxxxx
+      - --spring.r2dbc.password=xxxxx
       - --spring.sql.init.platform=postgresql
       # 外部访问地址，请根据实际需要修改
       - --halo.external-url=http://localhost:8090/
@@ -45,7 +45,7 @@ helm 自定义值文件：
 
 `~/halo-values.yaml`
 
-```bash
+```yaml {linenos=table,filename="./halo-values.yaml"}
 # halo-values.yaml
 global:
   # 国内镜像加速
@@ -60,8 +60,8 @@ externalDatabase:
   platform: postgresql
   host: "xxxxx.com"
   port: "5432"
-  user: "xxxxx"
-  password: "xxxxx"
+  user: "xxxx"
+  password: "xxxx"
   database: "halo"
 
 ```
@@ -77,3 +77,5 @@ helm install halo halo/halo
 helm install halo halo/halo -f ~/halo-values.yaml
 
 ```
+
+‍

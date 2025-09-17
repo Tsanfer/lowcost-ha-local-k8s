@@ -54,7 +54,7 @@ hugo mod get ${GITHUB_MIRROR}/imfing/hextra
 
 文件位置：`./hugo.yaml`​
 
-```yaml
+```yaml {linenos=table,filename="./hugo.yaml"}
 module:
   imports:
     - path: github.com/imfing/hextra
@@ -99,7 +99,7 @@ hugo mod get -u ${GITHUB_MIRROR}/imfing/hextra
 
 文件位置：`./hugo.yaml`​
 
-```yaml
+```yaml {linenos=table,filename="./hugo.yaml"}
 caches:
   images:
     dir: :cacheDir/images
@@ -116,7 +116,7 @@ touch .github/workflows/hugo.yaml
 
 文件位置：`.github/workflows/pages.yaml`​
 
-```bash
+```yaml {linenos=table,hl_lines=[60,61],filename=".github/workflows/pages.yaml"}
 # 用于构建和部署 Hugo 站点到 GitHub Pages 的示例工作流
 name: 部署 Hugo 站点到 Pages
 
@@ -212,18 +212,16 @@ git push
 
 文件位置：`.github/workflows/pages.yaml`​
 
-```bash
+```yaml {linenos=table,hl_lines=[4],filename=".github/workflows/pages.yaml"}
         run: |
           hugo \
             --gc --minify \
             --baseURL "https://www.example.com/"
 ```
 
-将 `--baseURL`​ 参数改为自定义的域名
+将 `--baseURL` 参数改为自定义的域名
 
 在 Github 仓库设置的 Pages → Custom domain 中填入自定义域名
 
 登录 DNS 服务商后台，添加一条 CNAME 记录：将域名指向 GitHub Pages 的地址（如 username.github.io）
 
-‍
-‍

@@ -1,7 +1,7 @@
 ---
 draft: false
-title: '高可用 k8s 集群安装'
-weight: 1
+title: '（附加）使用 KubeKey 部署高可用 K8s 集群'
+weight: 4
 ---
 
 {{< callout emoji="🔄" >}}
@@ -34,7 +34,7 @@ weight: 1
 
 ### 高可用 k8s 集群架构
 
-![alt text](https://kubesphere.io/images/blogs/en/k8s-ha-practices/internalLoadBalancer.png)
+![image.png](https://kubesphere.io/images/blogs/en/k8s-ha-practices/internalLoadBalancer.png)
 
 控制节点一般为奇数，原因在于：leader 选举，要求可用节点数 > 总结点数/2
 
@@ -144,11 +144,11 @@ metadata:
 spec:
   hosts:
   - {name: master1, address: 192.168.0.2, internalAddress: 192.168.0.2, user: root, password: "xxxx"}
-  - {name: master2, address: 192.168.0.3, internalAddress: 192.168.0.3, user: root, password: "xx"}
-  - {name: master3, address: 192.168.0.4, internalAddress: 192.168.0.4, user: root, password: "xxxx"}
-  - {name: worker1, address: 192.168.0.5, internalAddress: 192.168.0.5, user: root, password: "xxx"}
-  - {name: worker2, address: 192.168.0.6, internalAddress: 192.168.0.6, user: root, password: "xxx"}
-  - {name: worker3, address: 192.168.0.7, internalAddress: 192.168.0.7, user: root, password: "xxx"}
+  - {name: master2, address: 192.168.0.3, internalAddress: 192.168.0.3, user: root, password: "xxxx"}
+  - {name: master3, address: 192.168.0.4, internalAddress: 192.168.0.4, user: root, password: "xxx"}
+  - {name: worker1, address: 192.168.0.5, internalAddress: 192.168.0.5, user: root, password: "xxxx"}
+  - {name: worker2, address: 192.168.0.6, internalAddress: 192.168.0.6, user: root, password: "xxxx"}
+  - {name: worker3, address: 192.168.0.7, internalAddress: 192.168.0.7, user: root, password: "xxxx"}
   roleGroups:
     etcd:
     - master1
@@ -207,9 +207,9 @@ metadata:
   name: sample
 spec:
   hosts:
-  - {name: master, address: 107.175.83.132, internalAddress: 107.175.83.132, user: root, password: "xxxx"}
+  - {name: master, address: 107.175.83.132, internalAddress: 107.175.83.132, user: root, password: "xxxxxx"}
   - {name: worker1, address: 104.168.43.39, internalAddress: 104.168.43.39, user: root, password: "xxxxx"}
-  - {name: worker2, address: 148.135.67.22, internalAddress: 148.135.67.22, user: root, password: "xxxxx"}
+  - {name: worker2, address: 148.135.67.22, internalAddress: 148.135.67.22, user: root, password: "xxxx"}
   - {name: worker3, address: 23.94.223.197, internalAddress: 23.94.223.197, user: root, password: "xxxxx"}
   roleGroups:
     etcd:
@@ -252,7 +252,7 @@ spec:
 
 ### 启用 kubectl 自动补全
 
-```yaml
+```bash
 # 将 completion 脚本添加到你的 ~/.zshhrc 文件
 echo 'source <(kubectl completion zsh)' >>~/.zshrc
 
@@ -261,7 +261,3 @@ source ~/.zshrc
 ```
 
 ---
-
-[k3sup 使用](k3sup%20使用.md)​
-
-‍

@@ -13,5 +13,4 @@ weight: 7
 {{< cards >}}
   {{< card icon="" title="使用 Hugo 和 Github Pages 生成并部署静态站点" link="./hugo-github-pages-deployment" >}}
   {{< card icon="" title="（待补全）部署 Halo 建站工具" link="./halo-deployment" >}}
-  {{< card icon="" title="（其他未完成部分）" link="./" >}}
 {{< /cards >}}

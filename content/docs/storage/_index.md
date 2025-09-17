@@ -11,8 +11,6 @@ weight: 6
 介绍以下内容，搭建数据与存储设施：
 
 {{< cards >}}
-  {{< card icon="" title="高可用 Pigsty 数据库集群部署" link="./‍postgresql-ha-cluster-deployment" >}}
+  {{< card icon="" title="高可用 Pigsty 数据库集群部署" link="./postgresql-ha-cluster-deployment" >}}
   {{< card icon="" title="（待补全）数据库测试" link="./database-testing" >}}
-  {{< card icon="" title="（待补全）超融合集群测试" link="./hyperconverged-cluster-testing" >}}
-  {{< card icon="" title="（其他未完成部分）" link="./" >}}}
 {{< /cards >}}

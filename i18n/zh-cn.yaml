@@ -1,7 +1,11 @@
 backToTop: "返回顶部"
 changeLanguage: "切换语言"
 changeTheme: "切换主题"
-copyright: "© 2025 Tsanfer"
+# copyright: "© 2025 Tsanfer"
+copyright: '© 2025 Tsanfer</br></br>
+<a href="http://www.beian.gov.cn/portal/registerSystemInfo" target="_blank"><span>川公网安备51110202002360号</span></a>
+<a href="https://beian.miit.gov.cn/" target="_blank"><span>蜀ICP备20005033号-2</span></a>'
+# <img src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png" class="w-full" style="width: 16px;">川公网安备51110202002360号 蜀ICP备20005033号-2
 dark: "深色"
 editThisPage: "在 GitHub 上编辑此页 →"
 lastUpdated: "最后更新于"

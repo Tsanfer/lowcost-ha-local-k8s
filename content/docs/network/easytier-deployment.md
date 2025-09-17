@@ -30,7 +30,7 @@ cd ~/easytier
 
 容器编排文件：`~/easytier/docker-compose.yml`​
 
-```yaml
+```yaml {linenos=table,filename="~/easytier/docker-compose.yml"}
 services:
   easytier:
     image: easytier/easytier:v2.3.1
@@ -90,11 +90,10 @@ services:
 
 容器编排环境变量文件：`~/easytier/.env`​
 
-```bash
+```ini {linenos=table,filename="~/easytier/.env"}
 EASYTIER_PATH=/root/easytier
 NET_NAME=net-name
 NET_PASS=password
-
 ```
 
 - 启动容器
@@ -153,7 +152,7 @@ EOF
 
 容器编排文件位置：`~/easytier/docker-compose.yml`​
 
-```yaml
+```yaml {linenos=table,filename="~/easytier/docker-compose.yml"}
 services:
   easytier:
     image: easytier/easytier:v2.3.1
@@ -212,7 +211,7 @@ services:
 
 容器编排环境变量文件：`~/easytier/.env`​
 
-```bash
+```ini {linenos=table,filename="~/easytier/.env"}
 EASYTIER_PATH=/root/easytier
 NET_NAME=net-name
 NET_PASS=password
@@ -375,9 +374,9 @@ grep "fpu" /proc/cpuinfo
 
   以下为参考配置（启动方式为配置文件）：
 
-  ```yaml
+  ```ini {linenos=table,hl_lines=[2,14,17,18,21,24]}
   instance_name = "openwrt" # 设备名称
-  instance_id = "f9f05421-7c6b-47d6-a67d-4d58d49f51d8" # 设备 ID
+  instance_id = "xxxxxxxx-yyyy-zzzz" # 设备 ID
   dhcp = true
   listeners = [
       "tcp://0.0.0.0:11010",

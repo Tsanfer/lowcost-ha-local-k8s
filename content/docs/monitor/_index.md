@@ -12,5 +12,4 @@ weight: 8
 
 {{< cards >}}
   {{< card icon="" title="部署哪吒监控" link="./nezha-monitoring-deployment" >}}
-  {{< card icon="" title="（其他未完成部分）" link="./" >}}
 {{< /cards >}}

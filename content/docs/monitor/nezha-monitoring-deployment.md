@@ -4,7 +4,7 @@ title: '部署哪吒监控'
 weight: 1
 ---
 
-面板地址：[系统监控](https://monitor.k8s-local.tsanfer.com/)
+面板地址：[系统监控](https://k8s-local.monitor.tsanfer.com/)
 
 ## 安装服务端 Dashboard
 
@@ -12,11 +12,13 @@ weight: 1
 curl -L https://gitee.com/naibahq/scripts/raw/main/install.sh -o nezha.sh && \
 	chmod +x nezha.sh && \
 	sudo CN=true ./nezha.sh
-# 请指定安装命令中预设的 nezha-agent 连接地址 （例如 example.com:443）aliecs.tsanfer.com
 
+# 请输入暴露端口: (默认 8008)8008
+# 请指定安装命令中预设的 nezha-agent 连接地址 （例如 example.com:443）k8s-local.monitor.tsanfer.com
+# 是否希望通过 TLS 连接 Agent？（影响安装命令）[y/N]N
 ```
 
-在“Agent 对接地址【域名/IP:端口】”项中填入通信域名和端口 “data.example.com:8008”。
+默认地址：域名:站点访问端口，比如：`http://k8s-local.monitor.tsanfer.com:8008`​
 
 ## 安装客户端 Agent
 
@@ -26,22 +28,22 @@ curl -L https://gitee.com/naibahq/scripts/raw/main/install.sh -o nezha.sh && \
 >
 > - 代码
 >
->   ```bash
+>   ```bash {linenos=table,hl_lines=[7,15,27]}
 >   apt-get update -y 
 >   apt-get install -y unzip 
 >
 >   # hub.gitmirror.com/https://raw.githubusercontent.com \
 >   curl -L https://gh-proxy.com/raw.githubusercontent.com/nezhahq/scripts/main/agent/install.sh -o agent.sh && \
->   	chmod +x agent.sh && \
->   	env NZ_SERVER=aliecs.tsanfer.com:8008 NZ_TLS=false NZ_CLIENT_SECRET=xxxx \
->   	./agent.sh
+>     chmod +x agent.sh && \
+>     env NZ_SERVER=k8s-local.monitor.tsanfer.com NZ_TLS=false NZ_CLIENT_SECRET=<CLIENT_SECRET> CN=true \
+>     ./agent.sh
 >
 >   # 1. 删除非uuid行
 >   sed -i '/^uuid:/!d' /opt/nezha/agent/config.yml
 >
 >   # 2. 在uuid行（第1行）前插入配置块
 >   sed -i '1i \
->   client_secret: xxxx \
+>   client_secret: <CLIENT_SECRET> \
 >   debug: false \
 >   disable_auto_update: false \
 >   disable_command_execute: false \
@@ -53,7 +55,7 @@ curl -L https://gitee.com/naibahq/scripts/raw/main/install.sh -o nezha.sh && \
 >   ip_report_period: 30 \
 >   report_delay: 1 \
 >   self_update_period: 0 \
->   server: aliecs.tsanfer.com:8008 \
+>   server: k8s-local.monitor.tsanfer.com:8008 \
 >   skip_connection_count: false \
 >   skip_procs_count: false \
 >   temperature: true \
@@ -83,24 +85,24 @@ apt-get install -y unzip
 
 在 `服务器` 页面中，点击 `安装命令` 并选择对应操作系统，安装命令将自动复制到你的剪贴板
 
-```bash
+```bash {linenos=table,hl_lines=[4]}
 curl -L https://raw.githubusercontent.com/nezhahq/scripts/main/agent/install.sh \
   -o agent.sh \
   && chmod +x agent.sh \
-  && env NZ_SERVER=aliecs.tsanfer.com:8008 NZ_TLS=false NZ_CLIENT_SECRET=xxxx \
+  && env NZ_SERVER=k8s-local.monitor.tsanfer.com:8008 NZ_TLS=false NZ_CLIENT_SECRET=<CLIENT_SECRET> CN=true \
   ./agent.sh
 
 ```
 
 更改配置文件
 
-```bash
+```bash {linenos=table,hl_lines=[6,18]}
 # 1. 删除非uuid行
 sed -i '/^uuid:/!d' /opt/nezha/agent/config.yml
 
 # 2. 在uuid行（第1行）前插入配置块
 sed -i '1i \
-client_secret: xxxx \
+client_secret: <CLIENT_SECRET> \
 debug: false \
 disable_auto_update: false \
 disable_command_execute: false \
@@ -112,7 +114,7 @@ insecure_tls: false \
 ip_report_period: 30 \
 report_delay: 1 \
 self_update_period: 0 \
-server: aliecs.tsanfer.com:8008 \
+server: k8s-local.monitor.tsanfer.com:8008 \
 skip_connection_count: false \
 skip_procs_count: false \
 temperature: true \
@@ -176,7 +178,7 @@ unzip nezha-agent.zip -d ${nezha_agent_install_path}
 
 # <<EOF 必须紧跟在命令后面，表示命令的输入内容将从下一行开始，直到遇到 EOF 为止。
 cat <<EOF >${nezha_agent_install_path}/config.yml
-client_secret: xxxx
+client_secret: <CLIENT_SECRET>
 debug: false
 disable_auto_update: false
 disable_command_execute: false
@@ -188,7 +190,7 @@ insecure_tls: false
 ip_report_period: 60
 report_delay: 4
 self_update_period: 90
-server: aliecs.tsanfer.com:8008
+server: k8s-local.monitor.tsanfer.com:8008
 skip_connection_count: false
 skip_procs_count: false
 temperature: true
@@ -251,7 +253,7 @@ echo
 
 个人一键脚本
 
-```powershell
+```powershell {linenos=table,hl_lines=[9,11,22,34]}
 # 下载脚本
 $github_raw_endpoint = "gh-proxy.com/raw.githubusercontent.com"
 $url = "https://${github_raw_endpoint}/nezhahq/scripts/main/agent/install.ps1"
@@ -262,7 +264,7 @@ Invoke-WebRequest -Uri $url -OutFile $outputPath -UseBasicParsing
 Set-ExecutionPolicy Bypass -Scope Process -Force
 $env:NZ_SERVER = "aliecs.tsanfer.com:8008"
 $env:NZ_TLS = "false"
-$env:NZ_CLIENT_SECRET = "xxxx"
+$env:NZ_CLIENT_SECRET = "<CLIENT_SECRET>"
 & $outputPath
 
 # 删除非 uuid 行
@@ -273,7 +275,7 @@ Set-Content -Path $configPath -Value $filteredContent
 
 # 在 uuid 行前插入配置块
 $configBlock = @'
-client_secret: xxxxx
+client_secret: <CLIENT_SECRET>
 debug: false
 disable_auto_update: false
 disable_command_execute: false
@@ -285,7 +287,7 @@ insecure_tls: false
 ip_report_period: 30
 report_delay: 1
 self_update_period: 0
-server: aliecs.tsanfer.com:8008
+server: k8s-local.monitor.tsanfer.com:8008
 skip_connection_count: false
 skip_procs_count: false
 temperature: true
@@ -314,7 +316,7 @@ Get-Content -Path $configPath | Select-String -Pattern "uuid:"
 
 通常位置：`/opt/nezha/agent/config.yml`
 
-```yaml
+```yaml {linenos=table,hl_lines=[1,13,20],filename="/opt/nezha/agent/config.yml"}
 client_secret: xxxx
 debug: false
 disable_auto_update: false
@@ -327,7 +329,7 @@ insecure_tls: false
 ip_report_period: 30
 report_delay: 1
 self_update_period: 0
-server: aliecs.tsanfer.com:8008
+server: k8s-local.monitor.tsanfer.com:8008
 skip_connection_count: false
 skip_procs_count: false
 temperature: true
