@@ -105,6 +105,9 @@ math: true
 |[🔗 Frp 内网穿透监控](https://frp.k8s-local.monitor.tsanfer.com/static/)|![2025-9-17_20-53-51.png](https://cdn.tsanfer.com/image/2025-9-17_20-53-51.png)|用户名：`admin`​<br />密码：`admin123`​|
 |[📊 服务监控](https://k8s-local.monitor.tsanfer.com/)|![2025-9-17_20-57-52.png](https://cdn.tsanfer.com/image/2025-9-17_20-57-52.png)||
 
+## 系统整体架构图
+
+![2025-8-31_06-22-16_hjnvhn5mnm.png](https://cdn.tsanfer.com/image/2025-8-31_06-22-16_hjnvhn5mnm.png "系统整体架构图")
 
 ## 功能特性
 
