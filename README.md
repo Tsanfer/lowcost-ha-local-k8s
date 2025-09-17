@@ -40,8 +40,8 @@
 | ---------------------| ------------------------------------------------------------------------------------| --------------------------------------------------------------|
 |[📖 指南文档](https://docs.lowcost-k8s-guide.tsanfer.com/)|![2025-9-17_20-36-44.png](https://cdn.tsanfer.com/image/2025-9-17_20-36-44.png)||
 |[🖥️ 设备实物](https://docs.lowcost-k8s-guide.tsanfer.com/docs/hardware/hardware-assembly-process/#%E6%89%80%E6%9C%89%E8%AE%BE%E5%A4%87%E6%90%AD%E5%BB%BA%E5%AE%8C%E6%88%90%E6%95%88%E6%9E%9C)|![](https://cdn.tsanfer.com/image/2025-7-23_16-07-40_fz2bio8xgo.jpg)||
-|[🖥️ Proxmox VE 虚拟化后台](https://pve.panel.tsanfer.com)|![2025-9-17_20-56-16.png](https://cdn.tsanfer.com/image/2025-9-17_20-56-16.png)|用户名：`viewer`​<br />密码：`viewer123`​<br />领域：Proxmox VE authentication server|
-|[🎛️ Kuboard 集群管理面板](https://kuboard.panel.tsanfer.com/)|![2025-9-17_20-55-33.png](https://cdn.tsanfer.com/image/2025-9-17_20-55-33.png)|用户名：`viewer`​<br />密码：`Viewer123`​|
+|[🖥️ Proxmox VE 虚拟化集群后台](https://pve.panel.tsanfer.com)|![2025-9-17_20-56-16.png](https://cdn.tsanfer.com/image/2025-9-17_20-56-16.png)|用户名：`viewer`​<br />密码：`viewer123`​<br />领域：Proxmox VE authentication server|
+|[🎛️ Kuboard K8s 集群管理面板](https://kuboard.panel.tsanfer.com/)|![2025-9-17_20-55-33.png](https://cdn.tsanfer.com/image/2025-9-17_20-55-33.png)|用户名：`viewer`​<br />密码：`Viewer123`​|
 |[🗺️ Pigsty 高可用数据库监控](https://database.k8s-local.monitor.tsanfer.com/)|![2025-9-17_20-54-38.png](https://cdn.tsanfer.com/image/2025-9-17_20-54-38.png)||
 |[🔗 Frp 内网穿透监控](https://frp.k8s-local.monitor.tsanfer.com/static/)|![2025-9-17_20-53-51.png](https://cdn.tsanfer.com/image/2025-9-17_20-53-51.png)|用户名：`admin`​<br />密码：`admin123`​|
 |[📊 服务监控](https://k8s-local.monitor.tsanfer.com/)|![2025-9-17_20-57-52.png](https://cdn.tsanfer.com/image/2025-9-17_20-57-52.png)||
