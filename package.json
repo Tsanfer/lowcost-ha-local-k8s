@@ -1,6 +1,7 @@
 {
-  "name": "填一个名称",
+  "name": "hugo-start",
   "version": "1.0.0",
+  "description": "Hugo starter template with Ananke theme",
   "scripts": {
     "build": "./node_modules/.bin/hugo --minify",
     "postinstall": "git submodule update --init",
@@ -11,6 +12,13 @@
   "dependencies": {
     "hugo-extended": "^0.147.8"
   },
+  "keywords": [
+    "hugo",
+    "blog",
+    "static-site"
+  ],
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
     "cross-env": "^7.0.3"
   }
