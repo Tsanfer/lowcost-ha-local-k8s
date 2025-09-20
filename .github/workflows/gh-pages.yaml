@@ -1,4 +1,4 @@
-name: Deploy Hugo Site to Pages
+name: Deploy Hugo Site to gh-pages Branch
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # 获取所有历史记录以支持 .GitInfo 和 .Lastmod
           submodules: recursive
       - name: Setup Go
         uses: actions/setup-go@v5
@@ -43,7 +43,7 @@ jobs:
           hugo \
             --gc --minify \
             --baseURL "https://docs.lowcost-k8s-guide.tsanfer.com/" \
-            -D public
+        # --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
@@ -59,3 +59,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          target-branch: gh-pages  # 指定部署到 gh-pages 分支
