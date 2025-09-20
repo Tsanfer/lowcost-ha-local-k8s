@@ -1,12 +1,17 @@
 {
-  "name": "your-package",
-  "version": "0.0.1",
+  "name": "填一个名称",
+  "version": "1.0.0",
   "scripts": {
-    "build": "hugo",
-    "create": "hugo new",
-    "serve": "hugo server"
+    "build": "./node_modules/.bin/hugo --minify",
+    "postinstall": "git submodule update --init",
+    "dev": "hugo server -D",
+    "clean": "rm -rf public",
+    "preview": "hugo server"
+  },
+  "dependencies": {
+    "hugo-extended": "^0.147.8"
   },
   "devDependencies": {
-    "hugo-bin": "^0.112.7"
+    "cross-env": "^7.0.3"
   }
 }
