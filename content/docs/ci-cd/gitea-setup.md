@@ -251,7 +251,7 @@ sudo docker compose up -d && sudo docker compose logs -f
 
   - 结果
 
-    ![image](assets/image-20260213170835-9zj084l.png)
+    ![1779330461147.png](https://cdn.tsanfer.com/image/2026-05-21_10-27-41_317.png)
 
 - 测试
 

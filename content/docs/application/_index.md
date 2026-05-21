@@ -1,7 +1,7 @@
 ---
 draft: false
 title: '应用部署示例'
-weight: 7
+weight: 9
 ---
 
 {{< callout emoji="🛠" >}}

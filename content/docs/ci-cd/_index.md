@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'CI/CD 部署'
-weight: 5
+weight: 7
 ---
 
 {{< callout emoji="🛠" >}}

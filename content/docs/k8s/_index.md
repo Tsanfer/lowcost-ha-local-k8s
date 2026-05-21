@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Kubernetes 集群'
-weight: 5
+weight: 6
 ---
 
 {{< callout emoji="🛠" >}}

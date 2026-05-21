@@ -77,4 +77,4 @@ weight: 2
 
   在浏览器中访问对应域名即可
 
-  ![image](assets/image-20260212234414-s4r269f.png)
+  ![260521103208428.png](https://cdn.tsanfer.com/image/2026-05-21_10-32-08_486.png)
