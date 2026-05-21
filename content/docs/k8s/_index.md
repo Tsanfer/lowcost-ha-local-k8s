@@ -11,8 +11,10 @@ weight: 5
 介绍以下内容，搭建 K8s 集群：
 
 {{< cards >}}
+  {{< card icon="" title="部署 Harbor 容器镜像仓库" link="./harbor-setup" >}}
   {{< card icon="" title="使用 kubeasz 安装高可用 K8s 集群" link="./kubeasz-ha-k8s-setup" >}}
   {{< card icon="" title="部署 K8s 管理面板 Kuboard" link="./kuboard-setup" >}}
+  {{< card icon="" title="配置 Ingress 网关" link="./ingress-gateway-setup" >}}
   {{< card icon="" title="（待补全）k8s 集群测试" link="./k8s-testing" >}}
   {{< card icon="" title="（附加）使用 KubeKey 部署高可用 k8s 集群" link="./kubekey-ha-k8s-setup" >}}
 {{< /cards >}}
